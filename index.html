@@ -84,13 +84,12 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         // 初始化翻頁核心控制與動畫特效配置
-        const swiper = new Swiper('.mySwiper', {
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
             loop: false,
-            effect: 'flip',
-            fadeEffect: {
-                crossFade: true
-            },
-            allowTouchMove: false
+            flipEffect: {
+                slideShadows: true,
         });
     </script>
 </body>
