@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>H5 Story</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* 圖五專用：透明超連結熱區，精準定位於底部文字區域 */
+        .link-hotspot {
+            position: absolute;
+            left: 0;
+            bottom: 12%; /* 根據圖五文字高度調整定位 */
+            width: 100%;
+            height: 8%;   /* 覆蓋文字高度的點擊範圍 */
+            z-index: 20;  /* 確保層級高於 Swiper 拖拽層 */
+            cursor: pointer;
+            background: transparent; /* 完全透明 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- 圖 1 -->
+            <div class="swiper-slide">
+                <img src="MEITU_20260625_190937975.jpg" alt="Page 1">
+            </div>
+            <!-- 圖 2 -->
+            <div class="swiper-slide">
+                <img src="MEITU_20260625_190937975.jpg" alt="Page 2">
+            </div>
+            <!-- 圖 3 -->
+            <div class="swiper-slide">
+                <img src="MEITU_20260625_193514832" alt="Page 3">
+            </div>
+            <!-- 圖 4 -->
+            <div class="swiper-slide">
+                <img src="MEITU_20260625_193919253.jpg" alt="Page 4">
+            </div>
+            <!-- 圖 5 -->
+            <div class="swiper-slide">
+                <img src="MEITU_20260626_002333497.jpg" alt="Page 5">
+                <!-- 請將下方 href 內的網址替換為您實際要跳轉的詳情頁連結 -->
+                <a href="https://discord.com/channels/938107321584853012/1519614850488340490/1519614945656967258" target="_blank" class="link-hotspot"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // 初始化翻頁核心控制與動畫特效配置
+        const swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+            loop: false,
+            cardsEffect: {
+                perSlideRotate: 2,
+                perSlideOffset: 8
+            },
+            allowTouchMove: true
+        });
+    </script>
+</body>
+</html>
